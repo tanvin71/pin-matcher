@@ -43,7 +43,7 @@
                             </div>
                             <div>
                                 <button id="submit" type="submit" class="submit-btn">Submit</button>
-                                <p  class="action-left"><span id="try">3</span>try left</p>
+                                <p  class="action-left" disabled><span id="try">3</span>try left</p>
                             </div>
                     </div>
                 </div>
@@ -93,10 +93,14 @@
            else {
             document.getElementById("mismatch").style.display = "block"; 
             document.getElementById("match").style.display = "none";
-            // let tryNumber =  document.getElementById("try").InnerText;
-            // let tryNum = parseInt(tryNumber);
-            // let tryTotal = tryNum - 1;
-            // document.getElementById("try").InnerText = tryTotal;
+            let tryNumber =  document.getElementById("try").innerText;
+            let tryNum = parseInt(tryNumber);
+            let tryTotal = tryNum - 1;
+            document.getElementById("try").innerText = tryTotal;
+            if(tryTotal == 0 ){
+                document.getElementById("try").style.display ="none" ;
+            }
+
            }
 
         })
